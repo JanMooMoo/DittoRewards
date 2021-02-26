@@ -250,7 +250,7 @@ this.loadToken()
         <div className="row">
         <div className="column">
          <p className='disclaimer'>Rewards for eligible users of Ditto Swap from block {numeral(this.state.fromBlock).format('0,00')} to block {numeral(this.state.toBlock).format('0,00')}</p>
-         <p className='disclaimer2'>Last Known Block: {this.state.lastKnownBlock}</p>
+         <p className='disclaimer2'>Last Known Block: {numeral(this.state.lastKnownBlock).format('0,00')}</p>
          </div>
          </div>
          <div className="table-wrapper">
@@ -274,7 +274,7 @@ this.loadToken()
                 {!this.state.loading && this.state.sortedVolume.map((swaps,index)=> <tr
                  className="cursor-pointer mt-2" key={index}>  
 				        <td >{index + 1}</td>   
-                <td> <a href={'https://bscscan.com/address/' + swaps.address} target='blank'>{swaps.address}</a></td>     
+                <td> <a href={'https://etherscan.io/address/' + swaps.address} target='blank'>{swaps.address}</a></td>     
       	        <td><div><img src={token} className="ditto-logo" border={1} alt="Ditto logo" width={20}/></div>{numeral(swaps.airdrop_reward).format('0,00.0000')}</td>
                 </tr>  )}             
               </table> 
